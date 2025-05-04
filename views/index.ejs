@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>Bienvenido a la Fiesta</h1>
+  <h1>Bienvenid@ a la Galeria</h1>
 
   <nav>
     <ul>
@@ -17,27 +17,29 @@
     </ul>
   </nav>
 
-  <h2>Subir Fotos</h2>
-  <form action="/upload" method="POST" enctype="multipart/form-data">
-    <label for="name">Nombre del invitado:</label>
-    <input type="text" name="name" required>
-    <br><br>
+  <section>
+    <h2>Subir Fotos</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label for="name">Nombre del invitado:</label>
+      <input type="text" name="name" placeholder="Ingresa el nombre del invitado" required>
+      
+      <label for="files">Selecciona las fotos:</label>
+      <input type="file" name="files" multiple required>
+      
+      <button type="submit">Subir Fotos</button>
+    </form>
+  </section>
 
-    <label for="files">Selecciona las fotos:</label>
-    <input type="file" name="files" multiple required>
-    <br><br>
-
-    <button type="submit">Subir Fotos</button>
-  </form>
-
-  <h2>Galería</h2>
-  <div class="gallery">
-    <% photos.forEach(photo => { %>
-      <div class="photo">
-        <img src="<%= photo.imagePath %>" alt="<%= photo.name %>">
-        <p><%= photo.name %></p>
-      </div>
-    <% }); %>
-  </div>
+  <section>
+    <h2>Galería</h2>
+    <div class="gallery">
+      <% photos.forEach(photo => { %>
+        <div class="photo">
+          <img src="<%= photo.imagePath %>" alt="<%= photo.name %>">
+          <p><%= photo.name %></p>
+        </div>
+      <% }); %>
+    </div>
+  </section>
 </body>
 </html>

@@ -1,6 +1,8 @@
 /* public/styles.css */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;  /* Color de fondo suave */
+  color: #333;  /* Texto oscuro para buen contraste */
   text-align: center;
   margin: 0;
   padding: 0;
@@ -8,6 +10,7 @@ body {
 
 h1 {
   margin-top: 20px;
+  color: #333;  /* Título en color oscuro */
 }
 
 nav ul {
@@ -20,43 +23,95 @@ nav ul li {
   margin-right: 20px;
 }
 
+nav a {
+  color: #4CAF50;  /* Color verde para los enlaces */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #45a049;  /* Cambio de color al pasar el mouse */
+}
+
 form {
   margin-top: 20px;
+  background-color: #ffffff;  /* Fondo blanco para el formulario */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-input[type="text"] {
-  padding: 5px;
-}
-
+input[type="text"],
 input[type="file"] {
-  padding: 5px;
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #ccc;  /* Bordes suaves */
+  border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+  border-color: #4CAF50;  /* Resaltar con color verde cuando se enfoca */
 }
 
 button {
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #4CAF50;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #45a049;  /* Cambio de color al pasar el mouse */
+}
+
+h2 {
+  color: #333;  /* Título de secciones en color oscuro */
+  margin-top: 40px;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .photo {
   margin: 10px;
   text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;  /* Fondo blanco para cada imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil alrededor de las fotos */
 }
 
 .photo img {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  border-radius: 8px;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+footer a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #45a049;
 }

@@ -6,10 +6,10 @@ const path = require('path');
 
 // Crear la aplicación de Express
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Conectar a MongoDB
-mongoose.connect('mongodb://localhost:27017/fotosfiesta', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Conectado a la base de datos'))
   .catch((err) => console.error('Error al conectar con la base de datos', err));
 

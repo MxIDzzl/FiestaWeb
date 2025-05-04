@@ -1,0 +1,43 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiesta Fotos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Bienvenido a la Fiesta</h1>
+
+  <nav>
+    <ul>
+      <li><a href="/">Subir Fotos</a></li>
+      <li><a href="/gallery">Ver Galería</a></li>
+    </ul>
+  </nav>
+
+  <h2>Subir Fotos</h2>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <label for="name">Nombre del invitado:</label>
+    <input type="text" name="name" required>
+    <br><br>
+
+    <label for="files">Selecciona las fotos:</label>
+    <input type="file" name="files" multiple required>
+    <br><br>
+
+    <button type="submit">Subir Fotos</button>
+  </form>
+
+  <h2>Galería</h2>
+  <div class="gallery">
+    <% photos.forEach(photo => { %>
+      <div class="photo">
+        <img src="<%= photo.imagePath %>" alt="<%= photo.name %>">
+        <p><%= photo.name %></p>
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>
